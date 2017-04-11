@@ -1,0 +1,226 @@
+*{ 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	font-size: 100%; 
+	/*font: inherit;*/ 
+	vertical-align: baseline; 
+} 
+
+body { 
+	line-height: 1; 
+	background-image: url(); 
+	background-attachment: fixed; 
+	font-family: 'Poiret One', cursive;
+	font-size: 15px;
+} 
+
+
+
+/* Menu */ 
+#menu-checkbox { 
+	/* чекбокс скрыт */ 
+	display: none; 
+} 
+.main-menu { 
+/* пункты меню скрыты */ 
+	display: none; 
+	padding: 0; 
+	margin: 0; 
+	height: 100%; 
+	background-color: skyblue; 
+	height: 150px; 
+} 
+.main-menu li { 
+/* пункты меню расположены вертикально */ 
+/* каждый имеет ширину 100% */ 
+	font-size: 1em; 
+	display: block; 
+	width: 100%; 
+	height: 100%; 
+	text-align: center; 
+	height: 20%; 
+	border-color: darkblue; 
+} 
+.main-menu a { 
+/* немного стилизуем ссылки */ 
+	display: inline-block; 
+	padding-top: 7px; 
+	padding-bottom: 7px; 
+	color: #ffffff; 
+	text-decoration: none; 
+} 
+
+.main-menu li:hover { 
+	background-color: black; 
+	/*transform: skew(-15deg);*/ 
+} 
+
+.toggle-button { 
+	text-align: center; 
+	display: block; 
+	margin-top: 0; 
+	cursor: pointer; 
+	background-color: rgb(36,186,203); 
+	color: white; 
+} 
+.toggle-button:after { 
+	/* получаем данные из атрибута data-open в html */ 
+	content: attr(data-open); 
+	display: block; 
+	padding: 10px 30px; 
+} 
+#menu-checkbox:checked + nav[role="navigation"] .main-menu { 
+	/* когда чекбокс активен меню становится видимым */ 
+	display: block; 
+} 
+#menu-checkbox:checked + nav[role="navigation"] .toggle-button:after { 
+	content: attr(data-close); 
+} 
+
+
+
+@media screen and (min-width: 780px) { 
+	.toggle-button { 
+		/* label скрыт */ 
+		display: none; 
+	} 
+	.main-menu { 
+		display: block; 
+		margin: 0 auto; 
+		background-color: rgb(36,186,203); 
+		height: 50px; 
+	} 
+	.main-menu li { 
+	/*теги <li> расположены в ряд */ 
+		width: calc(100% / 5); 
+		height: inherit;
+		text-align: center; 
+		display: inline-block; 
+		margin-right: -5px; 
+		transition: 0.8s all; 
+
+	} 
+	.main-menu a { 
+		display: inline-block; 
+		margin-right: -4px; 
+		text-decoration: none; 
+		color: #ffffff; 
+		padding: 13px 0 13px 0; 
+		font-size: 150%; 
+	} 
+}
+.container{
+	width: 100%;
+	margin: 0 auto;
+}
+header img{
+	width: 100%;
+}
+#gallery {
+	width: 100%;
+	margin: 0 auto; 
+}
+
+#prev{
+	width:5%;
+	position: absolute;
+}
+
+#next{ 
+	width:5%;
+	position: absolute;
+	right: 0px;
+}
+#gallery #photos{
+	width: 100%;
+}
+#gallery #photos img{
+	width: 100%;
+	display: none;
+}
+
+#gallery #photos img:first-child{
+	display: block;
+}
+.linia {
+	float: left;
+}
+
+#rarrow, #larrow{
+	width: 100%;
+	margin-top: 300%;
+	
+}
+.GenInfo{
+	width: 100%;
+	height: 32vw;
+	background-color: rgb(36,186,203);
+	clear: both;
+	padding: 5% 0 5% 0;
+}
+.info{
+	 box-shadow: 0 0 14px rgba(0,0,0,0.5);
+	width: 90%;
+	height: 31vw;
+	background-color: white;
+	margin: 0 auto;
+	padding-top: 1%;
+}
+h1{
+	text-align: center;
+	font-size: 3vw;
+}
+.line{
+	height: 2px;
+	background-color: rgb(36,186,203) ;
+	margin: 2%;
+	border-radius: 30px;
+	
+}
+.info p{
+	text-indent: 4%;
+	font-size: 2vw;
+	text-align: justify;
+	margin: 0 2% 0 2%;
+	font-weight: bold;
+}
+footer{
+	width: 100%;
+	height: 15vw;
+	background-color: rgba(0, 0, 0, 0.78);
+	
+}
+.first, .second, .third, .fourth{
+	width: 25%;
+	float: left;
+	height: 15vw;
+	
+}
+.second, .third{
+	line-height: 140%;
+	font-size: 1.3vw;
+	color: white;
+	
+	 
+}
+.third{
+	margin-left: 5%;
+	margin-right: -5%;
+}
+
+.first, .fourth{
+	overflow: hidden;
+    position: relative;
+   
+}
+.first iframe, .fourth iframe{
+   
+    height:13vw;
+    width: 90%;
+	margin: 4%;
+    position:absolute;
+}
+.header {
+    margin-bottom: -2px;
+}
