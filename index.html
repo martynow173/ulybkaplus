@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
-		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+		<!--<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
@@ -12,14 +13,14 @@
 			</header>
 
 			<input type="checkbox" id="menu-checkbox" /> 
-			<nav role="navigation "><!— навигация —> 
+			<nav role="navigation"><!— навигация —> 
 				<label for="menu-checkbox" class="toggle-button" data-open="Menu" data-close="Close" onclick></label> 
 				<ul class="main-menu"><!— список пунктов меню —> 
-					<li><a href="index.html">Главная</a></li> 
-					<li><a href="Login.html">Прайс</a></li> 
-					<li><a href="interests.html">Схема проезда</a></li> 
-					<li><a href="Galery.html">О нас</a></li> 
-					<li><a href="Contacts.html">Врачи</a></li> 
+					<li><a href="General.html">Главная</a></li> 
+					<li><a href="Price.html">Прайс</a></li> 
+					<li><a href="Way.html">Схема проезда</a></li> 
+					<li><a href="About.html">О нас</a></li> 
+					<li><a href="Doctors.html">Врачи</a></li> 
 				</ul> 
 			</nav> 
 			
@@ -36,9 +37,9 @@
 				<div id="photos" class="linia">
 					
 					<img src="%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0.jpg" alt="">
-					<img src="Skgd263Mibw.jpg" alt="">
-					<img src="1-24.jpg" alt="">
-					<img src="XxGU1ryxZzE.jpg">
+					<img src="%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%202.jpg" alt="">
+					<img src="rfhnbyrf%204.jpg" alt="">
+					<img src="%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%203.jpg" alt="">
 	     		</div>
 				
 				
@@ -55,7 +56,21 @@
 					Улыбка+ — это стоматологическая клиника в г. Ульяновске, успешно осуществляющая свою деятельность с 2000-го года. За время своего существования клиника зарекомендовала себя как поставщик качественных стоматологических услуг по приемлемым ценам. В данный момент организация предоставляет свои услуги в двух филиалах в Заволжском районе г. Ульяновска по адресам: Карбышева 8, б-р Пензенский 14. На данном сайте Вы можете ознакомиться с предоставляемыми нами услугами, записаться на прием или узнать больше информации о нас. По телефонам, указанным в разделе "Контакты", Вы можете связаться с нашими врачами, обсудить с ними интересующие вас вопросы и записаться на консультацию в любое удобное для вас время. В разделе "Прайс" вы можете ознакомиться со списком предоставляемых услуг и их стоимостью. Лечение производится с помощью современного оборудования, что гарантирует высокое качество и низкую болезненность процедур.</p>
 				</div>
 			</div>
-  
+			<div class="form"><h1>Оставить заявку</h1>
+				<div id="form">
+					<form action="send.php" method="post">
+                        <BR>
+                        <input type="text" placeholder="Как вас зовут?" name="name"><BR>
+                        <input type="text" placeholder="Ваш телефонный номер" name="number"><BR>
+                        <p><textarea placeholder = "Что вас беспокоит? Есть ли специальные пожелания? В кратце изложите суть проблемы." rows="10" cols="45" name="special"></textarea></p>
+                        <input type="text" placeholder="Когда бы вы хотели записаться на прием?" name="time"><BR>
+                        <h1>Выберите желаемый филиал</h1>
+                        <p><input name="address" type="radio" value="ул. Карбышева, 8"> ул. Карбышева, 8</p>
+                        <p><input name="address" type="radio" value="б-р Пензенский, 14"> б-р Пензенский, 14</p>
+                        <input type="submit" value="Записаться">
+                    <form>
+				</div>
+			</div>
 			<footer>
 				<div class="first"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.747962022358!2d48.5921802159317!3d54.379102580208375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415d3f2002a3fe01%3A0xf784306fec1ce399!2z0KPQu9GL0LHQutCwKw!5e0!3m2!1sru!2sru!4v1491931556275"  style="border:0" allowfullscreen></iframe></div>
 				<div class="second"><br>Адрес: ул. Карбышева, 8<br> Телефон: 95-91-91 <br> Режим работы:<br> Пн-Пт: 9:00-18:00 <br> Сб: 9:00-15:00 

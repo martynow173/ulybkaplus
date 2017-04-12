@@ -11,7 +11,8 @@ body {
 	line-height: 1; 
 	background-image: url(); 
 	background-attachment: fixed; 
-	font-family: 'Poiret One', cursive;
+	/*font-family: 'Poiret One', cursive;*/
+	font-family: 'PT Sans', sans-serif;
 	font-size: 15px;
 } 
 
@@ -116,6 +117,10 @@ body {
 }
 header img{
 	width: 100%;
+	
+}
+.header{
+	margin-bottom:-2px;
 }
 #gallery {
 	width: 100%;
@@ -160,7 +165,7 @@ header img{
 	padding: 5% 0 5% 0;
 }
 .info{
-	 box-shadow: 0 0 14px rgba(0,0,0,0.5);
+	box-shadow: 0 0 14px rgba(0,0,0,0.5);
 	width: 90%;
 	height: 31vw;
 	background-color: white;
@@ -183,7 +188,7 @@ h1{
 	font-size: 2vw;
 	text-align: justify;
 	margin: 0 2% 0 2%;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 footer{
 	width: 100%;
@@ -216,11 +221,29 @@ footer{
 }
 .first iframe, .fourth iframe{
    
-    height:13vw;
+    height: 13vw;
     width: 90%;
 	margin: 4%;
-    position:absolute;
+    position: absolute;
 }
-.header {
-    margin-bottom: -2px;
+.form{
+	margin-top: 2%;
+	background-color: white;
+	height: 50vw;
+}
+#form{
+	background-color:rgb(36,186,203);
+	width: 50%;
+	height: 40vw;
+	margin: 0 auto;
+	margin-top: 2%;
+}
+#form {
+    border-radius: 40px;
+}
+form {
+    text-align: center;
+}
+form input {
+    margin:20px 0;
 }
