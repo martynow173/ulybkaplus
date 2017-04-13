@@ -201,12 +201,12 @@ footer{
 .form{
 	margin-top: 2%;
 	background-color: white;
-	height: 50vw;
+	height: 55vw;
 }
 #form{
 	background-color:rgb(36,186,203);
 	width: 50%;
-	height: 40vw;
+	height: 45vw;
 	margin: 0 auto;
 	margin-top: 2%;
 }
@@ -230,7 +230,7 @@ table,td,th{
 	font-size: 2vw;
 	border: 1px solid blue;
 }
-@media all and (min-width: 780px) { 
+@media screen and (min-width: 780px) { 
 	.toggle-button { 
 		/* label скрыт */ 
 		display: none; 
@@ -271,7 +271,7 @@ form #inp{
 	width: 100%;
 }
 form td{
-	border: 0.5vw solid rgb(36,186,203);
+	border: 0.5vw solid rgba(36,186,203,0);
 }
 .doctors{
 	width:100%;
@@ -301,12 +301,24 @@ form td{
 #filkarb, #fil{
 	width: 100%;
 	background-color: rgb(36,186,203); 
-	height: 30vw;
+	height: 29.7vw;
 }
-#one, #two{
-	width: 50%;
+#one{
+	width: 30%;
 	height: 30vw;
 	float: left;
+} 
+#two{
+	width: 40%;
+	height: 30vw;
+	float: left;
+}
+#three{
+	width: 30%;
+	float: left;
+}
+#three img{
+    width: 100%;
 }
 #one iframe{
 	margin: 2%;
