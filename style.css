@@ -40,7 +40,7 @@ body {
 	width: 100%; 
 	height: 100%; 
 	text-align: center; 
-	height: 20%; 
+	height: 25%; 
 	border-color: darkblue; 
 } 
 .main-menu a { 
@@ -81,36 +81,7 @@ body {
 
 
 
-@media screen and (min-width: 780px) { 
-	.toggle-button { 
-		/* label скрыт */ 
-		display: none; 
-	} 
-	.main-menu { 
-		display: block; 
-		margin: 0 auto; 
-		background-color: rgb(36,186,203); 
-		height: 50px; 
-	} 
-	.main-menu li { 
-	/*теги <li> расположены в ряд */ 
-		width: calc(100% / 5); 
-		height: inherit;
-		text-align: center; 
-		display: inline-block; 
-		margin-right: -5px; 
-		transition: 0.8s all; 
 
-	} 
-	.main-menu a { 
-		display: inline-block; 
-		margin-right: -4px; 
-		text-decoration: none; 
-		color: #ffffff; 
-		padding: 13px 0 13px 0; 
-		font-size: 150%; 
-	} 
-}
 .container{
 	width: 100%;
 	margin: 0 auto;
@@ -172,8 +143,9 @@ header img{
 	margin: 0 auto;
 	padding-top: 1%;
 }
-h1{
+h1, a{
 	text-align: center;
+	text-decoration: none;
 	font-size: 3vw;
 }
 .line{
@@ -238,12 +210,112 @@ footer{
 	margin: 0 auto;
 	margin-top: 2%;
 }
-#form {
-    border-radius: 40px;
+#price{
+	width: 100%;
+	
 }
-form {
-    text-align: center;
+#grid, #grider{
+	width: 60%;
+	margin: 3% 20% 5% 20%;
 }
-form input {
-    margin:20px 0;
+#snoska{
+	width: 60%;
+	margin: 0 auto;
+	font-size: 1.5vw;
+	margin-bottom: 2%;
+	color: darkorchid;
+	
+}
+table,td,th{
+	font-size: 2vw;
+	border: 1px solid blue;
+}
+@media all and (min-width: 780px) { 
+	.toggle-button { 
+		/* label скрыт */ 
+		display: none; 
+	} 
+	.main-menu { 
+		display: block; 
+		margin: 0 auto; 
+		background-color: rgb(36,186,203); 
+		height: 50px; 
+	} 
+	.main-menu li { 
+	/*теги <li> расположены в ряд */ 
+		width: calc(100% / 4); 
+		height: inherit;
+		text-align: center; 
+		display: inline-block; 
+		margin-right: -4px; 
+		transition: 0.8s all; 
+
+	} 
+	.main-menu a { 
+		display: inline-block; 
+		margin-right: -4px; 
+		text-decoration: none; 
+		color: #ffffff; 
+		padding: 13px 0 13px 0; 
+		font-size: 150%; 
+	} 
+}
+ 
+
+
+form table, form td, form th{
+	font-size: 1.4vw;
+	border: none;
+}
+form #inp{
+	width: 100%;
+}
+form td{
+	border: 0.5vw solid rgb(36,186,203);
+}
+.doctors{
+	width:100%;
+}
+.doctor{
+	margin: 3% 15% 2% 15%;
+	width: 70%;
+	height: 15.5vw;
+	background-color: rgb(36,186,203);
+	
+}
+.doctor img{
+	width: 20%;
+	float: left;
+    margin: 1% 5% 1% 1%;
+}
+.doctor h1 {
+    padding: 2% 3% 2% 0%;
+    font-size: 3vw;
+}
+.doctor p {
+    padding-left: 31%;
+    padding-right: 8%;
+    font-size: 3vw;
+    text-align: justify;
+}
+#filkarb, #fil{
+	width: 100%;
+	background-color: rgb(36,186,203); 
+	height: 30vw;
+}
+#one, #two{
+	width: 50%;
+	height: 30vw;
+	float: left;
+}
+#one iframe{
+	margin: 2%;
+	width: 25vw;
+	height: 25vw;
+	position: absolute;
+}
+#two{
+	line-height: 140%;
+	font-size: 2.5vw;
+	color: white;
 }

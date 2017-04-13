@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+<meta name="viewport" content="initial-scale=1.0, width=device-width"> 
+<meta http-equiv="Cache-Control" content="no-store" />
+		<link rel="stylesheet" href="style.css">
+		<!--<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<img src="Skgd263Mibw.jpg" alt="">
+			</header>
+
+			<input type="checkbox" id="menu-checkbox" /> 
+			<nav role="navigation"><!— навигация —> 
+				<label for="menu-checkbox" class="toggle-button" data-open="Menu" data-close="Close" onclick></label> 
+				<ul class="main-menu"><!— список пунктов меню —> 
+					<li><a href="index.html">Главная</a></li> 
+					<li><a href="Price.html">Прайс</a></li> 
+					<li><a href="Way.html">Филиалы</a></li> 
+					<li><a href="Doctors.html">Врачи</a></li> 
+				</ul> 
+			</nav> 
+			
+			<div id="price">
+					<h1 >
+						Протезирование<sup><a href="#snoska">*</a></sup>
+					</h1>
+					<table id="grid">
+						<thead>
+						  <tr>
+							<th data-type="string">Услуги</th>
+							<th data-type="number">Цена</th>
+						  </tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Консультация</td>
+								<td>300</td>
+							</tr>
+							<tr>
+								<td>Металлокерамическая коронка</td>
+								<td>4700</td>
+							</tr>
+							<tr>
+								<td>Коронка цельнолитая</td>
+								<td>3000</td>
+							</tr>
+							<tr>
+								<td>Коронка(зуб) с напылением</td>
+								<td>1500</td>
+							</tr>
+							<tr>
+								<td>Коронка(зуб) без напылением</td>
+								<td>1400</td>
+							</tr>
+							<tr>
+								<td>Фасетка с напылением</td>
+								<td>1600</td>
+							</tr>
+							<tr>
+								<td>Фасетка без напыления</td>
+								<td>1500</td>
+							</tr>
+							<tr>
+								<td>Пластмассовая коронка</td>
+								<td>1500</td>
+							</tr>
+							<tr>
+								<td>Вкладка культевая</td>
+								<td>2300</td>
+							</tr>
+							<tr>
+								<td>Протезы металлопластмассовые паяные (плазма)</td>
+								<td>2500</td>
+							</tr>
+							<tr>
+								<td>Протезы металлопластмассовые цельнолитые (плазма)</td>
+								<td>3000</td>
+							</tr>
+							<tr>
+								<td>Съемный протез (Полный + индивидуальная ложка)</td>
+								<td>8000</td>
+							</tr>
+							<tr>
+								<td>Съемный протез частичный</td>
+								<td>7000</td>
+							</tr>
+							<tr>
+								<td>Съемный протез из материала Вертекс (нейлон)</td>
+								<td>14000</td>
+							</tr>
+							<tr>
+								<td>Съемный протез литым базисом</td>
+								<td>8000</td>
+							</tr>
+							<tr>
+								<td>Микропротез 1 зуб</td>
+								<td>1500</td>
+							</tr>
+							<tr>
+								<td>Микропротез 2-3 зуба</td>
+								<td>2000</td>
+							</tr>
+							<tr>
+								<td>Бюгель металлический</td>
+								<td>15000</td>
+							</tr>
+							<tr>
+								<td>Починка сложная</td>
+								<td>1000</td>
+							</tr>
+							<tr>
+								<td>Перелом протеза</td>
+								<td>700</td>
+							</tr>
+							<tr>
+								<td>Цементирование и снятие кронки</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Цементирование и снятие металлокерамической или литой коронки</td>
+								<td>400</td>
+							</tr>
+							<tr>
+								<td>Слепок Альгинат</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Слепок Силикон</td>
+								<td>300</td>
+							</tr>
+							
+						</tbody>
+  					</table>
+
+					  <script>
+						// сортировка таблицы
+						// использовать делегирование!
+						// должно быть масштабируемо:
+						// код работает без изменений при добавлении новых столбцов и строк
+
+						var grid = document.getElementById('grid');
+
+						grid.onclick = function(e) {
+						  if (e.target.tagName != 'TH') return;
+
+						  // Если TH -- сортируем
+						  sortGrids(e.target.cellIndex, e.target.getAttribute('data-type'));
+						};
+
+						function sortGrids(colNum, type) {
+						  var tbodys = grid.getElementsByTagName('tbody')[0];
+
+						  // Составить массив из TR
+						  var rowsArrays = [].slice.call(tbodys.rows);
+
+						  // определить функцию сравнения, в зависимости от типа
+						  var compared;
+
+						  switch (type) {
+							case 'number':
+							  compared = function(rowA, rowB) {
+								return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+							  };
+							  break;
+							case 'string':
+							  compared = function(rowA, rowB) {
+								return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+							  };
+							  break;
+						  }
+
+						  // сортировать
+						  rowsArrays.sort(compared);
+
+						  // Убрать tbody из большого DOM документа для лучшей производительности
+						  grid.removeChild(tbodys);
+
+						  // добавить результат в нужном порядке в TBODY
+						  // они автоматически будут убраны со старых мест и вставлены в правильном порядке
+						  for (var i = 0; i < rowsArrays.length; i++) {
+							tbodys.appendChild(rowsArrays[i]);
+						  }
+
+						  grid.appendChild(tbodys);
+
+						}
+					  </script>
+
+					<h1>
+						Терапевтический <sup><a href="#snoska">*</a></sup>
+					</h1>
+					<table id="grider">
+						<thead>
+						  <tr>
+							<th data-type="string">Услуги</th>
+							<th data-type="number">Цена</th>
+						  </tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Консультация/ Первичный осмотр</td>
+								<td>200</td>
+							</tr>
+							
+							<tr>
+								<td>Анестезия аппликационная (спрей) </td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Анестезия инфильтационная</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Анестезия проводниковая</td>
+								<td>300</td>
+							</tr>
+							<tr>
+								<td>Временная пломба</td>
+								<td>300</td>
+							</tr>
+							<tr>
+								<td>Композит светового отверждения</td>
+								<td>2000</td>
+							</tr>
+							<tr>
+								<td>Раскрытие зуба при пульпитах, периодонтитах</td>
+								<td>500</td>
+							</tr>
+							<tr>
+								<td>Наложение девитализирующей пасты</td>
+								<td>300</td>
+							</tr>
+							<tr>
+								<td>Пломбирование одного канала<br>методом серединного штифта</td>
+								<td>800</td>
+							</tr>
+							<tr>
+								<td>Пломбирование одного канала<br>методом латеральной конденсации</td>
+								<td>1000</td>
+							</tr>
+							<tr>
+								<td>Пломбирование одного канала<br> временным лечебным препаратом, содержащим кальций</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Распломбировка одного канала простая</td>
+								<td>500</td>
+							</tr>
+							<tr>
+								<td>Распломбировка одного канала сложная</td>
+								<td>1000</td>
+							</tr>
+							<tr>
+								<td>Гигиеническая чистка зубов всей полости рта</td>
+								<td>3000</td>
+							</tr>
+							<tr>
+								<td>Снятие зубного камня ультразвуком,1зуб</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Снятие зубных отложений (мягкий налет),1 зуб</td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Покрытие зубов F-лаком, 1 зуб</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Инъекция лек.в-ва под слизистую оболочку</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Мед. Обработка зубодесновых карманов (турунды), 1 зуб</td>
+								<td>200</td>
+							</tr>
+							 <script>
+						// сортировка таблицы
+						// использовать делегирование!
+						// должно быть масштабируемо:
+						// код работает без изменений при добавлении новых столбцов и строк
+
+						var grider = document.getElementById('grider');
+
+						grider.onclick = function(e) {
+						  if (e.target.tagName != 'TH') return;
+
+						  // Если TH -- сортируем
+						  sortGrid(e.target.cellIndex, e.target.getAttribute('data-type'));
+						};
+
+						function sortGrid(colNum, type) {
+						  var tbody = grider.getElementsByTagName('tbody')[0];
+
+						  // Составить массив из TR
+						  var rowsArray = [].slice.call(tbody.rows);
+
+						  // определить функцию сравнения, в зависимости от типа
+						  var compare;
+
+						  switch (type) {
+							case 'number':
+							  compare = function(rowA, rowB) {
+								return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+							  };
+							  break;
+							case 'string':
+							  compare = function(rowA, rowB) {
+								return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+							  };
+							  break;
+						  }
+
+						  // сортировать
+						  rowsArray.sort(compare);
+
+						  // Убрать tbody из большого DOM документа для лучшей производительности
+						  grider.removeChild(tbody);
+
+						  // добавить результат в нужном порядке в TBODY
+						  // они автоматически будут убраны со старых мест и вставлены в правильном порядке
+						  for (var i = 0; i < rowsArray.length; i++) {
+							tbody.appendChild(rowsArray[i]);
+						  }
+
+						  grider.appendChild(tbody);
+
+						}
+					  </script>
+						</tbody>
+  					</table>
+		
+			</div>
+			<hr>
+			<div id="snoska">
+				<p> *Нажмите на название столбца для сортировки
+				</p>
+			</div>
+				<script src="javas.js"></script>
+		</div>
+	</body>
+</html>
